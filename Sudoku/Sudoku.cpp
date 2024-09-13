@@ -1,4 +1,5 @@
 #include "Sudoku.h"
+#include <stack>
 
 Sudoku::Sudoku()
 {
@@ -43,34 +44,9 @@ int Sudoku::compute_square(const int x, const int y) const
 	return 9;
 }
 
-int Sudoku::solve()
+void Sudoku::solveByBruteForce()
 {
-	bool addedDigit = false;
-	do{
-		int freeSpaces = 0;
-		for (int i = 0; i < 9; i++)
-			if ((freeSpaces = lines[i]->getFree())) {
-				//add element
-				int digit = lines[i]->GetFirstFree();
-
-				//
-				addedDigit = true;
-				continue;
-			}
-		for (int i = 0; i < 9; i++)
-			if ((freeSpaces = columns[i]->getFree())) {
-				//add element
-				addedDigit = true;
-				continue;
-			}
-		for (int i = 0; i < 9; i++)
-			if ((freeSpaces = squares[i]->getFree())) {
-				//add element
-				addedDigit = true;
-				continue;
-			}
-	} while (addedDigit);
-	return 0;
+	std::stack<std::pair<int, int>> S; //(i, j) in matrix
 }
 
 void Sudoku::print() const

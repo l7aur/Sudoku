@@ -20,21 +20,4 @@ void Set::insert(const int element)
 	data[element] = true;
 }
 
-int Set::getFree()
-{
-	int c = 0;
-	for (int i = 0; i < maximumSize; i++)
-		if (!data[i])
-			c++;
-	return c;
-}
-
-int Set::GetFirstFree()
-{
-	for (int i = 0; i < maximumSize; i++)
-		if (!data[i])
-			return i;
-	return 0;
-}
-
 

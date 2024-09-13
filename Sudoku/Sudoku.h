@@ -9,7 +9,7 @@ public:
 	Sudoku();
 	void read(std::ifstream& in);
 	int compute_square(const int x, const int y) const;
-	int solve();
+	void solveByBruteForce();
 	void print() const;
 private:
 	Set* squares[9];
