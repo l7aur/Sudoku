@@ -11,6 +11,12 @@ public:
 	int compute_square(const int x, const int y) const;
 	void solveByBruteForce();
 	void print() const;
+	bool isSolved() const;
+	void printLines() const;
+	void printColumns() const;
+	void printSquares() const;
+	void clear();
+	void generate();
 private:
 	Set* squares[9];
 	Set* lines[9];
